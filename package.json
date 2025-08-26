@@ -17,11 +17,15 @@
     "crypto-browserify": "^3.12.1",
     "events": "^3.3.0",
     "os-browserify": "^0.3.0",
-    "parcel": "^2.15.4",
+    "parcel": "2.15.4",
     "path-browserify": "^1.0.1",
     "process": "^0.11.10",
     "stream-browserify": "^3.0.0",
     "string_decoder": "^1.3.0",
     "vm-browserify": "^1.1.2"
-  }
+  },
+  "description": "Mock-up artist portfolio with a donation button that - Creates Mesh link token - Connects to Coinbase test account - Sends payment to test wallet - Fetches portfolio holdings",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
