@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width,initial-scale=1' />
+    <title>Artist Portfolio</title>
+    <link rel='stylesheet' href='./styles.css' />
+  </head>
+  <body>
+    <header class='site-nav'>
+      <div class='site-nav__inner'>
+        <div class='site-nav__brand'>My Portfolio</div>
+        <nav class='site-nav__links'>
+          <a href='#' id='nav-portfolio' class='nav__link' data-nav='portfolio'>Portfolio</a>
+          <a href='#' id='nav-about' class='nav__link' data-nav='about'>About Me</a>
+          <a href='#' id='nav-contact' class='nav__link' data-nav='contact'>Contact Me</a>
+          <button id='donate-btn' class='btn btn--primary'>Donate in Crypto</button>
+        </nav>
+      </div>
+    </header>
+
+
+    <!-- Homepage -->
+    <main>
+      <section id='section-portfolio' class='page'>
+        <h1>Portfolio</h1>
+        <p class='form__hint'>A curated selection of works. See more on my Patreon.</p>
+
+        <div id='slideshow' class='slideshow card'>
+          <img class='slide' src='../public/images/afterworld_by_silentjjfresh.jpg' alt='Artwork 1' />
+          <img class='slide' src='../public/images/09_29-30.jpg' alt='Artwork 3' />
+          <img class='slide' src='../public/images/10-01.jpg' alt='Artwork 4' />
+          <img class='slide' src='../public/images/bl_ch9_mermaidlagoon.jpg' alt='Artwork 5' />
+        </div>
+      </section>
+      
+      <!-- About Me section, filler bio -->
+      <section id='section-about' class='page u-hidden'>
+        <h1>About Me</h1>
+
+        <div class='about-grid card'>
+          <div class='about-image'>
+            <img src='https://picsum.photos/seed/artist/900/600' alt='Artist portrait placeholder' />
+          </div>
+          <div class='about-content'>
+            <p class='form__hint'>
+              Hi, I’m Jun — an independent artist focused on traditional media, anatomy, and figure drawing.
+              I build my work on observation and practice, using charcoal, pen and ink, and digital tools
+              to study the body, gesture, and rhythm of form. My drawings aim for clarity and structure
+              without losing the energy of a live mark.
+            </p>
+
+            <p>
+              I was born in Changsha, Hunan Province, China, and moved to the U.S. as a child. I grew up in a
+              small town in New Hampshire, where sketchbooks and library art books became my classroom.
+              Eighteen years of drawing later, I’m still driven by the same curiosity: how light wraps a form,
+              how a line carries weight, and how a pose can tell a story without words.
+            </p>
+
+            <p>
+              I began as a comic artist, learning pacing, staging, and clear visual storytelling. That foundation
+              led me deeper into anatomy and figure work — long and short poses, structure studies, and daily
+              sketch sessions. Today my process blends traditional composition with disciplined study:
+              bold charcoal for mass and value, pen and ink for edge and texture, and digital for planning,
+              refinement, and color notes.
+            </p>
+
+            <p>
+              My influences range from classic figure painters and illustrators to contemporary draftsmanship.
+              I’m interested in drawings that feel lived-in: honest proportions, decisive marks, and color kept
+              in service of form. Whether the piece is an anatomical study or a narrative figure drawing, my goal
+              is the same — clarity, intent, and a human presence on the page.
+            </p>
+
+            <p>
+              I work independently and release personal studies, prints, and finished drawings. I’m open to select
+              collaborations and commissions related to figure work, portraits, and narrative pieces. If my approach
+              resonates with you, I’d love to share more — thank you for looking.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id='section-contact' class='page u-hidden'>
+        <h1>Contact Me</h1>
+        <h3> Looking for commission or custom work? Reach out below!</h3>
+        <form id='contact-form' class='form card'>
+          <div class='form__row'>
+            <label class='form__label' for='contact-email'>Your Email Address</label>
+            <input id='contact-email' class='form__control' type='email' required placeholder='you@example.com' />
+          </div>
+          <div class='form__row'>
+            <label class='form__label' for='contact-subject'>Subject</label>
+            <input id='contact-subject' class='form__control' type='text' required placeholder='Subject' />
+          </div>
+          <div class='form__row'>
+            <label class='form__label' for='contact-message'>Message</label>
+            <textarea id='contact-message' class='form__control' rows='6' required placeholder='Your message'></textarea>
+          </div>
+          <div class='form__actions'>
+            <button type='submit' class='btn btn--primary'>Submit</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Modal -->
+    <div id='donate-modal' class='modal'>
+      <div class='modal__overlay' data-close='overlay'></div>
+      <div class='modal__dialog' role='dialog' aria-modal='true' aria-labelledby='donate-title'>
+        <header class='modal__header'>
+          <h3 id='donate-title' class='modal__title'>Donate with Crypto</h3>
+          <button id='modal-close' class='modal__close' aria-label='Close'>&times;</button>
+        </header>
+
+        <!-- Donation Form -->
+        <div id='donation-form-view'>
+          <form id='donate-form' class='form'>
+            <input type='hidden' id='donate-amount' value='50' />
+            <div class='form__row'>
+              <label class='form__label'>Amount ($ USD fiat)</label>
+              <div id='amount-buttons' class='amounts'>
+                <button type='button' class='amounts__opt' data-amount='5'>5</button>
+                <button type='button' class='amounts__opt' data-amount='10'>10</button>
+                <button type='button' class='amounts__opt' data-amount='20'>20</button>
+                <button type='button' class='amounts__opt amounts__opt--sel' data-amount='50'>50</button>
+                <button type='button' class='amounts__opt' data-amount='100'>100</button>
+              </div>
+            </div>
+
+            <div class='form__row'>
+              <label class='form__label' for='donate-asset'>Asset</label>
+              <select id='donate-asset' class='form__control'>
+                <option value='USDC' selected>USDC</option>
+              </select>
+            </div>
+
+            <div class='form__row'>
+              <label class='form__label' for='donate-address'>Destination Address</label>
+              <input id='donate-address' class='form__control' type='text' required placeholder='0x...' />
+            </div>
+
+            <div class='form__actions'>
+              <button type='button' id='modal-cancel' class='btn'>Cancel</button>
+              <button type='submit' class='btn btn--primary'>Donate with Mesh</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Donation Receipt (shown after successful transfer) -->
+        <div id='donation-receipt-view' class='u-hidden'>
+          <div id='xfer-box' class='card'>
+            <div id='xfer-body'></div>
+          </div>
+
+          <div id='cb-box' class='card'>
+            <div id='cb-body'></div>
+          </div>
+          
+          <div class='form__actions'>
+            <button type='button' id='modal-done' class='btn btn--primary'>Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type='module' src='./app.js'></script>
+  </body>
+</html>
