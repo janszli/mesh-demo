@@ -1,26 +1,3 @@
-// import { Link, LinkPayload, TransferFinishedPayload, createLink, } from '@meshconnect/web-link-sdk'
-
-// const ENVIRON = 'sandbox'
-
-// document.getElementById('open-mesh').addEventListener('click', async () => {
-//   console.log('Button clicked')
-
-//   const resp = await fetch('/link-token')
-//   const { linkToken, clientId } = await resp.json()
-
-//   const meshLink = createLink({
-//     clientId,
-//     environment: ENVIRON,
-//     onIntegrationConnected: (payload) => console.log('Integration connected:', payload),
-//     onExit: (err) => console.log('Exit:', err),
-//     onTransferFinished: (transferData) => console.log('Transfer finished:', transferData),
-//     onEvent: (event) => console.log('Event:', event),
-//   })
-
-//   await meshLink.openLink(linkToken)
-// })
-
-
 import { createLink } from '@meshconnect/web-link-sdk'
 import dotenv from 'dotenv'
 
