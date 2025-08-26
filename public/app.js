@@ -1,7 +1,4 @@
 import { createLink } from '@meshconnect/web-link-sdk'
-import dotenv from 'dotenv'
-
-dotenv.config()
 
 const ENVIRON = 'sandbox'
 
@@ -198,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const cfg = await fetch('/donation-defaults').then(r => r.json())
       if (cfg?.address) addrInput.value = cfg.address
     } catch {
-      addrInput.value = process.env.TEST_WALLET
+      // leave input empty on failure
     }
   })()
 
