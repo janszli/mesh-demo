@@ -254,10 +254,17 @@ main { max-width: 1100px; margin: 24px auto; }
 .modal--open .modal__overlay { opacity: 1; }
 .modal__dialog {
   position: relative;
-  margin: 70px auto;
+  margin: 5vh auto;
   background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
   border-radius: 16px;
   width: min(560px, 92vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.25) transparent;
+  overscroll-behavior: contain;
   padding: 18px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-elev);
@@ -265,6 +272,11 @@ main { max-width: 1100px; margin: 24px auto; }
   opacity: 0;
   transition: transform .25s cubic-bezier(.21,1,.21,1), opacity .25s ease;
 }
+
+/* Subtle scrollbars for dialog content */
+.modal__dialog::-webkit-scrollbar { width: 8px; }
+.modal__dialog::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.25); border-radius: 8px; }
+.modal__dialog::-webkit-scrollbar-track { background: transparent; }
 .modal--open .modal__dialog { transform: translateY(0) scale(1); opacity: 1; }
 .modal__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
 .modal__title { font-size: 18px; }
